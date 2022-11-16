@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "310314799266",
+    "project_id": "sunriseapp-fa182",
+    "storage_bucket": "sunriseapp-fa182.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310314799266:android:c88a22521304bc4a32c7fb",
+        "android_client_info": {
+          "package_name": "com.example.sunriseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310314799266-gu0gvq09jsa685nctc03fmigdamsjdvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-j-eQoh93S7fa52Cilz_-9NI7JBfNrGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310314799266-gu0gvq09jsa685nctc03fmigdamsjdvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
