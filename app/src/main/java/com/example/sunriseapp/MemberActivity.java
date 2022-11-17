@@ -28,6 +28,12 @@ public class MemberActivity extends AppCompatActivity {
         findViewById(R.id.configButton).setOnClickListener(onClickListener);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -58,6 +64,7 @@ public class MemberActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 startToast("회원정보 등록을 성공하였습니다.");
+                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -82,6 +89,5 @@ public class MemberActivity extends AppCompatActivity {
         Intent intent = new Intent(this, c);
         startActivity(intent);
     }
-
 
 }

@@ -39,22 +39,17 @@ public class SignUpActivity extends AppCompatActivity {
                     Log.e("click","click");
                     break;
                 case R.id.goToLoginButton:
-                    moveLoginActivity();
+                    moveActivity(LoginActivity.class);
                     break;
             }
 
         }
     };
+
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        /*
-        if(currentUser != null){
-            reload();
-        }
-         */
     }
 
     private void signUpLogic() {
@@ -72,7 +67,9 @@ public class SignUpActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     startToast("회원가입이 완료되었습니다.");
-                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    moveActivity(MainActivity.class);
+                                    finish();
+                                    // loginLogic();
                                 } else {
                                     if (task.getException() != null) {
                                         startToast(task.getException().toString());
@@ -93,8 +90,8 @@ public class SignUpActivity extends AppCompatActivity {
     private void startToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
-    private void moveLoginActivity(){
-        Intent intent = new Intent(this, LoginActivity.class);
+    private void moveActivity(Class c){
+        Intent intent = new Intent(this, c);
         startActivity(intent);
     }
 
