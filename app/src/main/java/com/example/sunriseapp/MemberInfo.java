@@ -8,6 +8,8 @@ public class MemberInfo {
   private  String birthDate;
   private  String address;
   private  String photoUri;
+
+
   public MemberInfo(String name,String phoneNumber,String birthDate,String address,String photoUri){
     this.name = name;
     this.phoneNumber = phoneNumber;
@@ -16,9 +18,13 @@ public class MemberInfo {
     this.photoUri = photoUri;
 
   }
+  public MemberInfo(String name,String phoneNumber,String birthDate,String address){
+    this.name = name;
+    this.phoneNumber = phoneNumber;
+    this.birthDate = birthDate;
+    this.address = address;
 
-
-
+  }
   public String getName() {
     return name;
   }

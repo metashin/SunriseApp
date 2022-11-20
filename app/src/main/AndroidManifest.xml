@@ -3,6 +3,7 @@
     package="com.example.sunriseapp">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -15,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SunriseApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,19 +25,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity">
+            android:name=".Activity.LoginActivity">
         </activity>
         <activity
-            android:name=".SignUpActivity">
+            android:name=".Activity.SignUpActivity">
         </activity>
         <activity
-            android:name=".PasswordResetActivity">
+            android:name=".Activity.PasswordResetActivity">
         </activity>
         <activity
-            android:name=".MemberActivity">
+            android:name=".Activity.MemberActivity">
         </activity>
         <activity
-            android:name=".CameraActivity">
+            android:name=".Activity.CameraActivity">
+        </activity>
+        <activity
+            android:name=".Activity.GalleryActivity">
         </activity>
     </application>
 

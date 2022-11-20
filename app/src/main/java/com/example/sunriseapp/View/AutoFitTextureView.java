@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.sunriseapp;
+package com.example.sunriseapp.View;
 
 import android.content.Context;
 import android.util.AttributeSet;

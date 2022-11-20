@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.sunriseapp;
+package com.example.sunriseapp.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,9 +22,11 @@ import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.sunriseapp.Fragnemt.Camera2BasicFragment;
+import com.example.sunriseapp.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
