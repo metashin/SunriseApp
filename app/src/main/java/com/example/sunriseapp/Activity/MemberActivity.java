@@ -81,9 +81,6 @@ public class MemberActivity extends AppCompatActivity {
                     profilePath = data.getStringExtra("profilePath");
                     Bitmap bmp = BitmapFactory.decodeFile(profilePath);
                     profileImageView.setImageBitmap(bmp);
-
-                    //Glide.with(this).load(profilePath).centerCrop().override(500).into(profileImageView);
-
                 }
                 break;
         }
@@ -170,9 +167,10 @@ public class MemberActivity extends AppCompatActivity {
 
             final StorageReference mountainImagesRef = storageRef.child("images/"+user.getUid()+"/"+"profileImage.jpg");
 
-            if(profilePath != null){
+            if(profilePath == null){
                 MemberInfo memberInfo = new MemberInfo(name, phoneNumber, birthDate,address);
                 uploader(memberInfo);
+                Log.e("실패","4개 정보 전송"+profilePath);
             }else{
                 try {
                     InputStream stream = new FileInputStream(new File(profilePath));
@@ -194,6 +192,7 @@ public class MemberActivity extends AppCompatActivity {
 
                                 MemberInfo memberInfo = new MemberInfo(name, phoneNumber, birthDate,address,downloadUri.toString());
                                 uploader(memberInfo);
+                                Log.e("실패","이미지 정보 전송");
                             } else {
                                 startToast("회원정보를 보내는데 실패했습니다.");
                             }

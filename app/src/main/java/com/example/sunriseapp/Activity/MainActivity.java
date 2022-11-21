@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
-            moveActivity(MemberActivity.class);
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference docRef = db.collection("users").document(user.getUid());
             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
-                        Log.d(TAG, "document error");
                         if(document!=null) {
                             if (document.exists()) {
                                 Log.d(TAG, "DocumentSnapshot data: " + document.getData());
@@ -55,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             Log.d(TAG, "db check ");
-
         }else{
             moveActivity(LoginActivity.class);
             Log.d(TAG, "LoginActivity ");
